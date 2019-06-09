@@ -1,0 +1,29 @@
+//bem mixins
+
+@mixin element($elementName) {
+  &__#{$elementName} {
+    @content;
+  }
+}
+
+@mixin modifier($modifierName) {
+  &--#{$modifierName} {
+    @content;
+  }
+}
+
+@mixin vendorPrefix($property, $value, $prefixes: ()) {
+  @each $prefix in $prefixes {
+    #{'-' + $prefix + '-' + $property}: $value;
+  }
+
+  #{$property}: value
+}
+
+@mixin prefix($property, $value) {
+  -webkit-#{$property}: $value;
+  -moz-#{$property}: $value;
+  -o-#{$property}: $value;
+  -ms-#{$property}: $value;
+  #{$property}: $value;
+}

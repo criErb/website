@@ -1,0 +1,154 @@
+.menu {
+
+  //menu icon
+  @include element('button-wrapper') {
+      width: 40px;
+      height: 40px;
+      z-index: 1011;
+      top: sp(2.4);
+      right: sp(2);
+      position: fixed;
+      cursor: pointer;
+      display: none;
+
+      @media only screen and (max-width: $tablet-large) {
+        display: block;
+      }
+  }
+
+  @include element('button') {
+      position: absolute;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background-color: $colorSecond;
+      transition: $transitionSlow;
+      box-shadow: 0 2px 0 $colorFirstTransparent;
+
+      @include modifier('show-menu') {
+        background-color: $colorFirst;
+      }
+
+      &:hover {
+        box-shadow: 0 3px 1px $colorFirstTransparent;
+      }
+  }
+
+  @include element('bar-container') {
+    position: relative;
+    width: 16px;
+    height: 16px;
+    top: sp(1.5);
+    left: sp(1.5);
+    overflow: hidden;
+  }
+
+  @include element('bar') {
+    position: absolute;
+    border-radius: 2px;
+    width: 16px;
+    height: 2px;
+    background-color: $colorFirst;
+
+    @include modifier('show-menu') {
+      background-color: $colorSecond;
+    }
+
+    @include modifier('st') {
+      top: 2px;
+    }
+
+    @include modifier('nd') {
+      top: 50%;
+      margin-top: -1px;
+    }
+
+    @include modifier('rd') {
+      bottom: 2px;
+    }
+
+    @include modifier('close-left') {
+      @include prefix('transform', rotate(45deg));
+      width: 18px;
+      top: -16px;
+      left: -24px;
+    }
+
+    @include modifier('close-right') {
+      @include prefix('transform', rotate(-45deg));
+      width: 18px;
+      top: -16px;
+      left: 24px;
+    }
+  }
+
+  @include modifier('home') {
+    position: fixed;
+  }
+
+  //menu section
+
+  @include modifier('selected') {
+    color: $colorThird !important;
+  }
+
+  & a {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  @include element('section-wrapper') {
+    position: fixed;
+    right: -120%;
+    width: 100%;
+    height: 100%;
+    z-index: 1010;
+    overflow: auto;
+  }
+
+  @include element('section') {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+  }
+
+  @include element('block-wrapper') {
+    width: 90px;
+    z-index: 1010;
+    padding: 4px 0;
+    height: 100%;
+    position: absolute;
+    text-align: center;
+    right: 0;
+    padding-top: 130px;
+    background-color: $colorSecond;
+  }
+
+  @include element('block') {
+    width: 100%;
+    padding: sp(2) sp(2);
+    display: block;
+    font-size: $fontM;
+    text-decoration: none;
+    color: $colorThird;
+    cursor: pointer;
+
+    @media only screen and (max-height: $mobile-small) {
+      font-size: $fontS;
+    }
+  }
+
+  @include element('sub-item') {
+    padding: sp(1.5) sp(5);
+    display: block;
+    font-size: $fontS;
+    text-decoration: none;
+    color: $colorSecond;
+
+    @media only screen and (max-height: $mobile-small) {
+      font-size: $fontXS;
+    }
+  }
+}

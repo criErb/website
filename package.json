@@ -1,0 +1,26 @@
+{
+  "name": "newsite",
+  "version": "1.0.0",
+  "description": "Cristiano Erbacci personal site/portfolio",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Cristiano Erbacci",
+  "license": "ISC",
+  "devDependencies": {
+    "browser-sync": "^2.18.13",
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-connect-php": "^1.0.1",
+    "gulp-jshint": "^2.0.4",
+    "gulp-sass": "^3.1.0",
+    "gulp-sourcemaps": "^2.6.1",
+    "gulp-uglify": "^3.0.0",
+    "gulp-util": "^3.0.8",
+    "jshint-stylish": "^2.2.1"
+  },
+  "dependencies": {
+    "node-sass": "^4.9.3"
+  }
+}

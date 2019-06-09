@@ -1,0 +1,72 @@
+.reanimatio {
+
+  @include element('hider-line') {
+    position: relative;
+    height: 2px;
+    left: -100%;
+    margin-left: sp(-4);
+    @include prefix('transition', $transitionFast);
+
+    @include modifier('active') {
+      left: 0;
+      margin-left: 0;
+    }
+
+    @include modifier('black') {
+      background-color: $colorSecond;
+    }
+
+    @include modifier('white') {
+      background-color: $colorFirst;
+    }
+  }
+
+  @include element('medium-line') {
+    position: relative;
+    height: 2px;
+    left: 0;
+
+    @include modifier('black') {
+      background-color: $colorSecond;
+    }
+
+    @include modifier('white') {
+      background-color: $colorFirst;
+    }
+  }
+
+  @include element('big-line') {
+    position: relative;
+    height: 4px;
+    left: -100%;
+    margin-left: sp(-4);
+    @include prefix('transition', $transitionMedium);
+
+    @include modifier('active') {
+      left: 0;
+      margin-left: 0;
+    }
+
+    @include modifier('black') {
+      background-color: $colorSecond;
+    }
+
+    @include modifier('white') {
+      background-color: $colorFirst;
+    }
+  }
+
+  @include element('heading') {
+    position: relative;
+    background-color: $colorSecond;
+    height: 1px;
+    left: -100%;
+    margin-left: sp(-4);
+    @include prefix('transition', $transitionMedium);
+
+    @include modifier('active') {
+      left: 0;
+      margin-left: 0;
+    }
+  }
+}

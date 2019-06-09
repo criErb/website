@@ -1,0 +1,126 @@
+.text-section {
+
+  @include element('wrapper') {
+    max-width: 920px;
+    margin: 0 auto;
+    padding: sp(10) sp(4) 0 sp(4);
+
+    @include modifier('about') {
+      overflow: hidden;
+      width: 75%;
+      background-image: url('../img/logo-w.svg');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: right;
+    }
+  }
+
+  @include element('container') {
+    overflow: hidden;
+    margin-bottom: sp(2);
+
+    .index__body & {
+      padding-top: 0;
+    }
+  }
+
+  @include element('heading-wrapper') {
+    overflow: hidden;
+    display: block;
+  }
+
+  @include element('heading') {
+    position: relative;
+    bottom: -170px;
+    display: inline-block;
+    @include prefix('transition', $transitionFastDelay);
+
+    @media only screen and (max-width: $tablet-small) {
+      margin-bottom: sp(1);
+    }
+
+    @include modifier('active') {
+      bottom: 0;
+    }
+  }
+
+
+  @include element('tagline') {
+    text-align: left;
+  }
+
+  @include element('paragraph-wrapper') {
+    display: block;
+    overflow: hidden;
+  }
+
+  @include element('paragraph') {
+    position: relative;
+    left: 102%;
+    @include prefix('transition', $transitionMediumDelay);
+
+    @include modifier('works') {
+        color: $colorSecond;
+        background-color: $colorFirst;
+    }
+
+    @media only screen and (max-width: $mobile-large) {
+      font-size: $fontS;
+    }
+
+    @include modifier('active') {
+      left: 0;
+    }
+
+    & a {
+      font-size: $fontML;
+      text-decoration: none;
+      color: inherit;
+      color: $colorThird;
+    }
+  }
+
+  @include element('mail') {
+    margin-top: sp(2);
+    display: block;
+  }
+
+  @include element('skill-wrapper') {
+    &:after {
+      content: '';
+      clear: both;
+      display: block;
+    }
+  }
+
+  @include element('skill-group') {
+    width: 50%;
+    float: left;
+    padding: sp(4) sp(2) sp(2) 0 ;
+    opacity: 0;
+    @include prefix('transition', $transitionMedium);
+
+    @include modifier('active') {
+      opacity: 1;
+    }
+
+    &:first-child,
+    &:nth-child(3) {
+      padding-left: 0;
+    }
+
+    &:last-child,
+    &:nth-child(2) {
+      padding-right: 0;
+    }
+  }
+
+  @include element('skill-title') {
+    margin-top: 0;
+    font-size: $fontML;
+  }
+
+  @include element('skill-list') {
+    font-size: $fontS;
+  }
+}

@@ -1,0 +1,15 @@
+.spacer {
+
+  @include modifier('small') {
+    margin-top: sp(2);
+  }
+
+  @include modifier('medium') {
+    margin-top: sp(5);
+  }
+
+  @include modifier('large') {
+    margin-top: sp(10);
+  }
+
+}

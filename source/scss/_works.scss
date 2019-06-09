@@ -1,0 +1,186 @@
+.works {
+  margin-top: sp(8);
+  min-height: 100%;
+  &:after {
+    content: '';
+    clear: both;
+    display: block;
+  }
+
+  & a {
+      text-decoration: none;
+      color: inherit;
+  }
+
+  @include element('row') {
+    width: 100%;
+    height: auto;
+    padding: sp(3);
+    cursor: -webkit-grab;
+    cursor: grab;
+
+    &:active {
+      cursor: -webkit-grabbing;
+      cursor: grabbing;
+    }
+  }
+
+  @include element('item-wrapper') {
+    display: block;
+    width: 100%;
+    height: 100%;
+    padding: 0 sp(5);
+    @include prefix('transition', $transitionMedium);
+
+    @media only screen and (max-width: $tablet-small) {
+      padding: 0;
+      margin-top: sp(5);
+    }
+  }
+
+  @include element('item-content') {
+    display: block;
+    width: 300px;
+    margin: 0 auto;
+    height: 350px;
+    position: relative;
+    cursor: pointer;
+
+    @media only screen and (max-width: $desktop-small) {
+      width: 700px;
+    }
+
+    @media only screen and (max-width: $tablet-large) {
+      width: 400px;
+    }
+
+    @media only screen and (max-width: $tablet-small) {
+      width: 200px;
+      height: 250px;
+    }
+
+    @media only screen and (max-width: $mobile-large) {
+      width: 150px;
+      height: 180px;
+    }
+  }
+
+  @include element('item-caption') {
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    margin-top: -100px;
+    left: sp(-8);
+    z-index: 1;
+
+    @media only screen and (max-width: $tablet-small) {
+      width: 180px;
+      height: 180px;
+      left: 50%;
+      margin-left: -90px;
+      top: 100%;
+      text-align: center;
+      margin-top: 0;
+    }
+
+    @media only screen and (max-width: $mobile-large) {
+      width: 150px;
+      margin-left: -75px;
+    }
+
+    & h3 {
+      font-size: $fontXXL;
+      margin-bottom: sp(1);
+
+      @media only screen and (max-width: $tablet-small) {
+        font-size: $fontL;
+      }
+
+      @media only screen and (max-width: $mobile-large) {
+        font-size: $fontML;
+      }
+    }
+
+    & p {
+
+      @media only screen and (max-width: $mobile-large) {
+        display: none;
+      }
+    }
+  }
+
+  @include element('item-image') {
+    position: absolute;
+    top: sp(3);
+    right: sp(-15);
+    width: 300px;
+    z-index: 1;
+
+    @media only screen and (max-width: $tablet-small) {
+      width: 230px;
+      top: sp(-5);
+      left: 50%;
+      margin-left: -115px;
+    }
+
+    @media only screen and (max-width: $mobile-large) {
+      width: 180px;
+      margin-left: -90px;
+    }
+  }
+
+  @include element('item-background') {
+
+    @include modifier('hytravel') {
+      background: #40CBFD;
+    }
+
+    @include modifier('savethechildren') {
+      background: #F70031;
+    }
+
+    @include modifier('foody') {
+      background: #FEE233;
+    }
+
+    @include modifier('fmsrevo') {
+      background: #AB86FF;
+    }
+
+    @include modifier('shoppingicons') {
+      background: #EB2C6A;
+    }
+
+    @include modifier('lorenzopreziosi') {
+      background: #D4D4D4;
+    }
+
+    @include modifier('work-shoppingicons') {
+      background-image: url('../img/works/shoppingicons/icons-header.png');
+    }
+
+    @include modifier('work-fmsrevo') {
+      background-image: url('../img/works/fms_revo/fms-header.jpg');
+    }
+
+    @include modifier('work-foody') {
+      background-image: url('../img/works/foody/foody-header.jpg');
+    }
+  }
+
+  @include element('role') {
+    font-size: $fontS;
+    margin: 0;
+  }
+
+  @include element('description') {
+    width: 50%;
+    float: left;
+    &:after {
+      content: '';
+      clear: both;
+      display: block;
+    }
+  }
+
+}

@@ -1,0 +1,57 @@
+.work-menu {
+
+  @include element('container') {
+    width: 100px;
+    position: absolute;
+    right: sp(5);
+    text-align: right;
+    top: sp(3.5);
+
+    &:hover .work-menu__arrow {
+      left: -35px;
+    }
+  }
+
+  @include element('item') {
+    font-size: $fontML;
+    cursor: pointer;
+    position: relative;
+    @include prefix('transition', $transitionFast);
+
+    @media only screen and (max-width: $tablet-large) {
+      font-size: $fontM;
+    }
+
+    @include modifier('selected') {
+      color: $colorThird;
+      text-decoration: none;
+    }
+
+    & a {
+      text-decoration: none;
+      color: inherit;
+    }
+  }
+
+  @include element('arrow') {
+    width: 20px;
+    height: 15px;
+    display: block;
+    position: absolute;
+    top: 4px;
+    left: -25px;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-image: url('../img/back-arrow.svg');
+    @include prefix('transition', $transitionFast);
+
+
+    @media only screen and (max-width: $tablet-large) {
+      width: 20px;
+      left: -25px;
+      top: 2px;
+    }
+  }
+
+}

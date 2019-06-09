@@ -1,0 +1,254 @@
+.section {
+
+  @include element('background') {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+    min-height: 480px;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    &:after {
+      content: '';
+      clear: both;
+      display: block;
+    }
+
+    @include modifier('intro') {
+      background-color: $colorSecond;
+      background-image: url('../img/svg/path-intro.svg');
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+    }
+
+    @include modifier('about') {
+      background-color: $colorFirst;
+      background-image: url('../img/svg/bg-about.svg');
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      color: $colorSecond;
+    }
+
+    @include modifier('skills') {
+      background-color: #f6f6f6;
+      background-image: url('../img/svg/bg-skills.svg');
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      color: $colorSecond;
+    }
+
+    @include modifier('works') {
+        min-height: 600px;
+        position: relative;
+        display: block;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+    }
+
+    @include modifier('contacts') {
+      background-color: #f6f6f6;
+      background-image: url('../img/svg/bg-contacts.svg');
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      color: $colorSecond;
+    }
+
+    @include modifier('red') {
+      background-color: $colorSectionRed;
+      color: $colorFirst;
+    }
+
+    @include modifier('lightgrey') {
+      background-color: $colorFourth;
+      color: $colorSecond;
+    }
+
+    @include modifier('path') {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+
+      @media only screen and (max-width: $desktop-small) {
+        width: auto;
+      }
+    }
+
+    @keyframes slide {
+      0%{
+        transform: translate3d(-3000px, 0, 0);
+      }
+      100%{
+        transform: translate3d(0, 0, 0);
+      }
+    }
+
+    @include modifier('path-intro') {
+     background-image: url(../img/svg/path-intro.svg);
+     width: 6000px;
+     height: 100%;
+     position: absolute;
+     background-repeat: repeat;
+    }
+
+    @include modifier('path-desk') {
+     background-image: url(../img/svg/path-desk.svg);
+     width: 3000px;
+     height: 100%;
+     position: absolute;
+     background-repeat: repeat;
+    }
+  }
+
+  @include element('container') {
+    max-width: 1500px;
+    margin: 0 auto;
+    height: 100%;
+  }
+
+  @include element('wrapper') {
+    width: 50%;
+    height: 100%;
+    position: relative;
+    float: left;
+    padding: 0 sp(6);
+    display: flex;
+    align-items: center;
+
+    @media only screen and (max-width: $tablet-small) {
+      width: 100%;
+      float: none;
+      height: 50%;
+      padding: 0 sp(2);
+    }
+
+    &:after {
+      content: '';
+      clear: both;
+      display: block;
+    }
+
+    @include modifier('mobile') {
+      display: none;
+
+      @media only screen and (max-width: $tablet-small) {
+        display: block;
+      }
+    }
+
+    @include modifier('desktop') {
+
+      @media only screen and (max-width: $tablet-small) {
+        display: none;
+      }
+    }
+  }
+
+  @include element('content') {
+    width: 100%;
+    position: relative;
+
+    @media only screen and (max-width: $tablet-small) {
+      height: 100%;
+    }
+
+    @include modifier('svg-small') {
+      display: block;
+      width: 100%;
+
+      @media only screen and (max-width: $tablet-small) {
+        max-height: 300px;
+        padding: sp(8) sp(4)  0 sp(4);
+      }
+    }
+
+    @include modifier('svg-big') {
+      width: 100%;
+      height: 100%;
+
+      @media only screen and (max-width: $tablet-large) {
+        position: absolute;
+        height: 490px;
+        left: 0;
+        top: 50%;
+        margin-top: -245px;
+      }
+
+      @media only screen and (max-width: $tablet-small) {
+        position: absolute;
+        height: 390px;
+        left: 0;
+        top: 50%;
+        margin-top: -160px;
+      }
+
+      @media only screen and (max-width: $mobile-large) {
+        position: absolute;
+        height: 330px;
+        left: 0;
+        top: 50%;
+        margin-top: -95px;
+      }
+
+      @media only screen and (max-width: $mobile-small) {
+        position: absolute;
+        height: 230px;
+      }
+    }
+
+    @include modifier('works') {
+      padding-top: sp(5);
+      width: 275px;
+      margin: 0 auto;
+      text-align: center;
+
+      @media only screen and (max-width: $tablet-large) {
+        width: 150px;
+      }
+    }
+
+    @include modifier('flex') {
+      display: flex;
+      align-items: center;
+    }
+
+    @include modifier('text') {
+      overflow: hidden;
+      height: auto;
+    }
+  }
+  @include element('drag') {
+    width: 40px;
+    height: 40px;
+    margin: 0 auto;
+    @include prefix('animation', drag 4s infinite);
+
+    @media only screen and (max-width: $mobile-large) {
+      display: none;
+    }
+  }
+
+  @keyframes drag {
+    0% {
+      transform: translateX(-50px);
+    }
+
+    50% {
+      transform: translateX(50px);
+    }
+
+    100% {
+      transform: translateX(-50px);
+    }
+  }
+}

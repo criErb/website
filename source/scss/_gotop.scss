@@ -1,0 +1,49 @@
+.gotop {
+
+  @include element('button-wrapper') {
+      width: 40px;
+      height: 40px;
+      bottom: sp(2.4);
+      right: sp(4);
+      position: fixed;
+      cursor: pointer;
+      opacity: 0;
+      @include prefix('transition', $transitionSlow);
+
+      @include modifier('active') {
+        opacity: 1;
+      }
+
+      @media only screen and (max-width: $tablet-large) {
+        right: sp(2);
+      }
+  }
+
+  @include element('button') {
+      position: absolute;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background-color: $colorSecond;
+      transition: $transitionSlow;
+      box-shadow: 0 2px 0 $colorFirstTransparent;
+
+      &:hover {
+        box-shadow: 0 3px 1px $colorFirstTransparent;
+      }
+  }
+
+  @include element('bar-container') {
+    position: relative;
+    width: 20px;
+    height: 20px;
+    top: 50%;
+    margin-top: -10px;
+    left: 50%;
+    margin-left: -10px;
+    background-image: url('../img/svg/top-arrow.svg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+}

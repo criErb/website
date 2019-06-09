@@ -1,0 +1,83 @@
+.loader {
+
+  @include element('wrapper') {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1012;
+
+    .loaded & {
+      visibility: hidden;
+      @include prefix('transform', translateY(-100%));
+      @include prefix('transition', all 0.3s 0.6s ease-in-out);
+    }
+  }
+
+  @include element('content') {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    width: 60px;
+    height: 60px;
+    border: 2px solid $colorSecond;
+    border-top: $loaderBorder;
+    border-radius: 30px;
+    top: 50%;
+    left: 50%;
+    margin-top: -30px;
+    margin-left: -30px;
+    z-index: 1001;
+    @include prefix('animation', spin 1s linear infinite);
+
+    @-webkit-keyframes spin {
+      0% { -webkit-transform: rotate(0deg); }
+      100% { -webkit-transform: rotate(360deg); }
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    .loaded & {
+      opacity: 0;
+      @include prefix('transition', all 0.3s ease-in-out);
+    }
+  }
+
+  @include element('logo') {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    z-index: 1002;
+    top: 50%;
+    left: 50%;
+    margin-top: -15px;
+    margin-left: -15px;
+    background-image: url('../img/logo-w.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+
+    .loaded & {
+      opacity: 0;
+      @include prefix('transition', all 0.3s ease-in-out);
+    }
+  }
+
+  @include element('section') {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: $colorSecond;
+    z-index: 1000;
+
+    .loaded & {
+      @include prefix('transform', translateY(-100%));
+      @include prefix('transition', all 0.3s 0.3s ease-in-out);//first 0.3 is for animation, second 0.3 is for delay
+    }
+  }
+}

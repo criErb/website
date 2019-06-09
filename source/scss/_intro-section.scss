@@ -1,0 +1,226 @@
+.intro-section {
+
+  @include element('wrapper') {
+    min-height: 500px;
+    width: 50%;
+    height: 900px;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+    float: left;
+  }
+
+  @include element('container') {
+    width: 100%;
+    padding: sp(2) sp(5) sp(2) sp(2);
+    position: relative;
+    top: sp(-5);
+    color: $colorFirst;
+
+    @media only screen and (max-width: $tablet-small) {
+      text-align: center;
+      padding: 0;
+      position: absolute;
+      bottom: sp(11);
+      top: auto;
+    }
+  }
+
+  @include element('tagline-wrapper') {
+    overflow: hidden;
+
+    & h1 {
+      font-size: 94px;
+
+      @media only screen and (max-width: $desktop-small) {
+        font-size: $fontXXXL;
+      }
+      @media only screen and (max-width: $tablet-large) {
+        font-size: $fontXL;
+      }
+    }
+  }
+
+  @include element('tagline') {
+    position: relative;
+    top: 300px;
+    margin: 0;
+    margin-bottom: sp(2);
+    @include prefix('transition', $transitionMediumDelay);
+
+    @include modifier('active') {
+      top: 0;
+    }
+
+    @media only screen and (max-width: $tablet-small) {
+      margin-bottom: sp(2);
+    }
+  }
+
+  @include element('paragraph-wrapper') {
+    overflow: hidden;
+  }
+
+  @include element('paragraph') {
+    top: -190px;
+    position: relative;
+    @include prefix('transition', $transitionMediumDelay);
+
+    & p {
+      margin: 0;
+    }
+
+    @include modifier('active') {
+      top: 0;
+    }
+  }
+
+  @include element('about') {
+    overflow: hidden;
+    width: 75%;
+    background-image: url('../img/logo-w.svg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: right;
+  }
+
+    @include element('scroll-wrapper') {
+      cursor: pointer;
+      padding-top: sp(0.5);
+      width: 150px;
+      height: 70px;
+      margin: 0 auto;
+      position: absolute;
+      bottom: sp(2);
+      left: 50%;
+      margin-left: -75px;
+      overflow: hidden;
+
+      @media only screen and (max-width: $mobile-large) {
+        bottom: sp(0);
+      }
+    }
+
+    @include element('scroll-arrow') {
+      width: 30px;
+      height: 30px;
+      position: relative;
+      margin: 0 auto;
+      margin-top: 5px;
+      background-image: url('../img/arrow.svg');
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: contain;
+      animation: shake 2s ease-in-out infinite, arrowJump 5s 0.1s ease-in-out 1;
+
+      @media only screen and (max-width: $tablet-large) {
+        width: 20px;
+        height: 20px;
+      }
+    }
+    @keyframes arrowJump {
+      0% {
+        transform: translate3d(0,100px,0);
+      }
+      80% {
+        transform: translate3d(0,100px,0);
+      }
+
+      95% {
+        transform: translate3d(0,-3px,0);
+      }
+
+      96% {
+        transform: translate3d(0,0,0);
+      }
+
+      99% {
+        transform: translate3d(0,-1px,0);
+      }
+
+      100% {
+        transform: translate3d(0,0,0);
+      }
+    }
+
+    @keyframes shake {
+      0% {
+        @include prefix('transform', rotate(0deg));
+      }
+
+      3% {
+        @include prefix('transform', rotate(10deg));
+      }
+
+      6% {
+        @include prefix('transform', rotate(0deg));
+      }
+
+      9% {
+        @include prefix('transform', rotate(-10deg));
+      }
+
+      12% {
+        @include prefix('transform', rotate(0deg));
+      }
+
+      15% {
+        @include prefix('transform', rotate(10deg));
+      }
+
+      18% {
+        @include prefix('transform', rotate(0deg));
+      }
+
+      21% {
+        @include prefix('transform', rotate(-10deg));
+      }
+
+      24% {
+        @include prefix('transform', rotate(0deg));
+      }
+
+      100% {
+        @include prefix('transform', rotate(0deg));
+      }
+    }
+
+    @include element('scroll-text') {
+      position: relative;
+      text-align: center;
+      margin-bottom: sp(1.5);
+      font-size: $fontM;
+      color: $colorFirst;
+      @include prefix('animation', scrollText 5s ease-in-out 1);
+
+      @media only screen and (max-width: $tablet-large) {
+        font-size: $fontS;
+      }
+    }
+
+    @keyframes scrollText {
+      0% {
+        transform: translate3d(0,100px,0);
+      }
+      80% {
+        transform: translate3d(0,100px,0);
+      }
+
+      95% {
+        transform: translate3d(0,-1px,0);
+      }
+
+      96% {
+        transform: translate3d(0,1px,0);
+      }
+
+      99% {
+        transform: translate3d(0,-1px,0);
+      }
+
+      100% {
+        transform: translate3d(0,0,0);
+      }
+    }
+}

@@ -1,0 +1,86 @@
+
+//colors
+$colorFirst: #FFFFFF;
+$colorFirstHover: #efefef;
+$colorSecond: #000000;
+$colorSecondHover: #2f2f2f;
+$colorThird: #ed143d;
+$colorThirdHover: #fb5c7a;
+$colorFourth: lightgrey;
+
+$colorMint: #2BFEA5;
+
+$colorSectionDarker: #333333;
+$colorSectionRed: $colorThird;
+
+$colorGreyDark: #8e8e8e;
+$colorFirstTransparent: rgba(000, 000, 000, 0.2);
+$colorSelected: #4e4e4e;
+
+//font size
+$fontXXS: 8px;
+$fontXS: 10px;
+$fontS: 12px;
+$fontM: 14px;
+$fontML: 18px;
+$fontL: 26px;
+$fontXL: 38px;
+$fontXXL: 46px;
+$fontXXXL: 74px;
+
+//letter spacing
+$letterSpacingSubtitle: 0.2px;
+$letterSpacingParagraph: 0.8px;
+
+//line height
+$lineHeightParagraph: 1.5;
+
+//font weight
+$fontWeightSlim: 100;
+$fontWeightNormal: 200;
+$fontWeightFat: 600;
+
+//font families
+$headingFontBold: 'AvenirNextBold', 'Helvetica neue', sans-serif;
+$headingFontRegular: 'AvenirNextRegular', 'Helvetica neue', sans-serif;
+$paragraphFont: 'Playfair Display', 'Palatino Linotype', 'Book Antiqua', Palatino, serif;
+$bodyFont: 'AvenirNextRegular', sans-serif;
+
+//spacing
+$spacing: 8px;
+
+//borders
+$colorFirstBorder: 1px solid $colorFirst;
+$colorSecondBorder: 1px solid $colorSecond;
+$colorThirdBorder: 2px solid $colorThird;
+$formBorder: 1px solid $colorFirst;
+$greyBorder: 1px solid $colorGreyDark;
+$borderMenu: 2px solid;
+$loaderBorder: 2px solid $colorFirst;
+
+//button borderss
+$btnBorderRadius: 20px;
+$btnBorder: 2px solid $colorFirst;
+$btnBorderHover: 2px solid $colorThird;
+//transitons
+$transitionFast: all 0.2s;
+$transitionMedium: all 0.4s;
+$transitionSlow: all 0.6s;
+
+$transitionFastDelay: all 0.6s 0.2s;
+$transitionMediumDelay: all 0.6s 0.4s;
+$transitionSlowDelay: all 0.6s 1s;
+
+$transitionShadow: all 0.3s cubic-bezier(.25,.8,.25,1);
+
+//shadows
+$buttonShadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+$buttonShadowHover: 0 10px 22px rgba(0,0,0,0.25), 0 5px 10px rgba(0,0,0,0.22);
+
+//breakpoints
+$mobile-small: 320px;
+$mobile-large: 480px;
+$tablet-small: 768px;
+$tablet-large: 992px;
+$desktop-small: 1280px;
+$desktop-large: 1800px;

@@ -1,0 +1,291 @@
+.work {
+
+  @include element('header') {
+    width: 100%;
+
+    &:after {
+      content: '';
+      clear: both;
+      display: block;
+    }
+  }
+
+  @include element('image') {
+    width: 50%;
+    height: 500px;
+    float: left;
+    position: relative;
+    left: 0;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    @include prefix('transition', $transitionSlow);
+
+    @media only screen and (max-width: $tablet-small) {
+      width: 100%;
+      float: none;
+      height: 200px;
+    }
+
+    @include modifier('hytravel') {
+      background-image: url('../img/works/hytravel/header-hytravel.jpg');
+    }
+
+    @include modifier('lorenzopreziosi') {
+      background-image: url('../img/works/lorenzo_preziosi/header-lorenzopreziosi.png');
+    }
+
+    @include modifier('shoppingicons') {
+      background-image: url('../img/works/shoppingicons/icons-header.png');
+    }
+
+    @include modifier('savethechildren') {
+      background-image: url('../img/works/save_the_children/header-savethechildren.jpg');
+    }
+
+    @include modifier('fmsrevo') {
+      background-image: url('../img/works/fms_revo/fms-header.jpg');
+    }
+
+    @include modifier('foody') {
+      background-image: url('../img/works/foody/foody-header.jpg');
+    }
+  }
+
+  @include element('intro') {
+    width: 50%;
+    height: 500px;
+    float: left;
+    position: relative;
+    right: 0;
+    padding: sp(4);
+    overflow: hidden;
+    background-color: $colorSecond;
+    color: $colorFirst;
+    @include prefix('transition', $transitionSlowDelay);
+
+    @media only screen and (max-width: $tablet-small) {
+      width: 100%;
+      float: none;
+      padding: sp(4);
+      height: auto;
+    }
+
+    & h2 {
+      margin: 0 0 sp(2) 0;
+    }
+
+    & h4 {
+      margin-top: 0;
+    }
+  }
+
+  @include element('intro-heading') {
+    position: relative;
+    left: 0;
+    @include prefix('transition', $transitionSlow);
+
+    @include modifier('active') {
+      left: 0;
+    }
+  }
+
+  @include element('intro-sub-heading') {
+    position: relative;
+    left: 0;
+    @include prefix('transition', $transitionMediumDelay);
+
+    @include modifier('active') {
+      left: 0;
+    }
+  }
+
+  @include element('intro-text-content') {
+    position: relative;
+    left: 0;
+    @include prefix('transition', $transitionSlowDelay);
+
+    @include modifier('active') {
+      left: 0;
+    }
+  }
+
+
+  @include element('wrapper') {
+    width: 100%;
+    padding: sp(4) sp(4) 0 sp(4);
+
+    @media only screen and (max-width: $mobile-large) {
+      padding-top: 0;
+    }
+
+    @include modifier('black') {
+      background-color: $colorSecond;
+      color: $colorFirst;
+    }
+
+    @include modifier('white') {
+      background-color: $colorFirst;
+      color: $colorSecond;
+    }
+  }
+
+  @include element('section') {
+    max-width: 920px;
+    margin: 0 auto;
+    overflow: hidden;
+  }
+
+  @include element('doc-row') {
+    max-width: 920px;
+    margin: 0 auto;
+    position: relative;
+    padding: sp(4)  0  sp(8) 0;
+  }
+
+  @include element('doc-image') {
+    width: 100%;
+    margin: 0 auto;
+    display: block;
+    opacity: 0;
+    @include prefix('transition', $transitionFastDelay);
+
+      @include modifier('smaller') {
+        max-width: 500px;
+      }
+
+      @include modifier('active') {
+        opacity: 1;
+      }
+
+  }
+
+  @include element('doc-col') {
+    width: 50%;
+    height: 370px;
+    float: left;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    z-index: 1;
+
+    @media only screen and (max-width: $mobile-large) {
+      width: 100%;
+      float: none;
+    }
+
+    @include modifier('single') {
+      width: 100%;
+      float: none;
+      height: 450px;
+
+      @media only screen and (max-width: $mobile-large) {
+        height: 250px;
+      }
+    }
+
+    @include modifier('desktop') {
+      @media only screen and (max-width: $mobile-large) {
+        display: none;
+      }
+    }
+
+    @include modifier('mobile') {
+      display: none;
+      background-position: top;
+
+      @media only screen and (max-width: $mobile-large) {
+        display: block;
+      }
+    }
+
+  }
+
+  @include element('row-extension') {
+    width: 100%;
+    height: 280px;
+    position: absolute;
+    bottom: 0;
+
+    @media only screen and (max-width: $tablet-small) {
+      height: 200px;
+    }
+
+    @media only screen and (max-width: $mobile-large) {
+      height: 150px;
+    }
+
+    @media only screen and (max-width: $mobile-small) {
+      height: 100px;
+    }
+
+    @include modifier('white') {
+      background-color: $colorSecond;
+    }
+
+    @include modifier('black') {
+      background-color: $colorFirst;
+    }
+  }
+
+  @include element('others') {
+    margin-top: sp(10);
+    margin-bottom: sp(10);
+  }
+
+  @include element('heading-wrapper') {
+    overflow: hidden;
+    display: block;
+  }
+
+  @include element('heading-content') {
+    top: 150px;
+    position: relative;
+    @include prefix('transition', $transitionMediumDelay);
+
+    @include modifier('active') {
+      top: 0;
+    }
+  }
+
+  @include element('paragraph-wrapper') {
+    overflow: hidden;
+    display: block;
+  }
+
+  @include element('paragraph-content') {
+    right: -100%;
+    position: relative;
+    @include prefix('transition', $transitionSlowDelay);
+
+    @include modifier('active') {
+      right: 0;
+    }
+  }
+
+  @include element('others-wrapper') {
+    width: 100%;
+    height: 200px;
+  }
+
+  @include element('others-content') {
+    text-align: center;
+    width: 50%;
+    height: 100%;
+    float: left;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    @include prefix('transition', $transitionMedium);
+
+    & h4 {
+      margin-top: sp(2);
+    }
+
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+
+}

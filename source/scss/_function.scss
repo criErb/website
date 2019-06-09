@@ -1,0 +1,4 @@
+//spacing function
+@function sp($val) {
+  @return $val * $spacing;
+}

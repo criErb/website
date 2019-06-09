@@ -1,0 +1,51 @@
+.footer {
+  display: block;
+  width: 100%;
+  height: 100px;
+  padding: sp(2) sp(4);
+  background-color: $colorFirst;
+
+  @media only screen and (max-width: $mobile-small) and (orientation: landscape) {
+    margin-top: 200px;
+  }
+
+  & a {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  @include element('left-side') {
+    width: 50%;
+    float: left;
+    line-height: 20px;
+    font-size: $fontXXS;
+    text-transform: uppercase;
+    padding: sp(2) sp(4);
+    color: $colorSecond;
+
+    @media only screen and (max-width: $tablet-large) {
+      width: 100%;
+      float: none;
+      padding: sp(0.5) 0;
+    }
+  }
+
+  @include element('right-side') {
+    width: 50%;
+    float: left;
+    line-height: 20px;
+    text-align: right;
+    font-weight: $fontWeightFat;
+    font-size: $fontXXS;
+    padding: sp(2) sp(4);
+    color: $colorThird;
+
+    @media only screen and (max-width: $tablet-large) {
+      width: 100%;
+      float: none;
+      text-align: left;
+      padding: 0;
+    }
+  }
+
+}

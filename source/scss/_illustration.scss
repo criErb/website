@@ -1,0 +1,397 @@
+.illustration {
+
+  @include element('wrapper') {
+    min-height: 500px;
+    width: 50%;
+    height: 900px;
+    height: 100vh;
+    position: relative;
+    float: left;
+  }
+
+  @include element('container') {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding: 0 sp(2);
+
+    & svg {
+      width: 100%;
+      height: 600px;
+      position: relative;
+    }
+  }
+
+  @include element('animation') {
+
+    @include modifier('appear-ui') {
+      @include prefix('animation', appearUi 6s linear infinite);
+    }
+
+    @include modifier('insert-ui') {
+      @include prefix('animation', insertUi 6s linear infinite);
+    }
+
+    @include modifier('stars1') {
+      stroke-dasharray: 50 50;
+      stroke-dashoffset: 50;
+      @include prefix('animation', stars1 2s linear infinite);
+    }
+
+    @include modifier('stars2') {
+      stroke-dasharray: 50 50;
+      stroke-dashoffset: 50;
+      @include prefix('animation', stars2 2s linear infinite);
+    }
+
+    @include modifier('stars3') {
+      stroke-dasharray: 50 50;
+      stroke-dashoffset: 50;
+      @include prefix('animation', stars3 2s linear infinite);
+    }
+
+    @include modifier('stars4') {
+      stroke-dasharray: 50 50;
+      stroke-dashoffset: 50;
+      @include prefix('animation', stars4 2s linear infinite);
+    }
+
+    @include modifier('stars5') {
+      stroke-dasharray: 50 50;
+      stroke-dashoffset: 50;
+      @include prefix('animation', stars5 2s linear infinite);
+    }
+
+    @include modifier('stars6') {
+      stroke-dasharray: 50 50;
+      stroke-dashoffset: 50;
+      @include prefix('animation', stars6 2s linear infinite);
+    }
+
+    @include modifier('stars7') {
+      stroke-dasharray: 50 50;
+      stroke-dashoffset: 50;
+      @include prefix('animation', stars7 2s linear infinite);
+    }
+
+    @include modifier('stars8') {
+      stroke-dasharray: 50 50;
+      stroke-dashoffset: 50;
+      @include prefix('animation', stars8 2s linear infinite);
+    }
+
+    @include modifier('fire1') {
+      position: absolute;
+      @include prefix('animation', fire1 0.8s infinite);
+    }
+
+    @include modifier('fire2') {
+      position: absolute;
+      @include prefix('animation', fire2 0.8s infinite);
+    }
+
+    @include modifier('solid-float') {
+      @include prefix('animation', solidFloat1 2.3s infinite);
+    }
+
+    @include modifier('solid-float-mobile') {
+      @include prefix('animation', solidFloatMobile 2.3s infinite);
+    }
+
+    @include modifier('float-wings') {
+      @include prefix('animation', floatWings 2.3s infinite);
+    }
+
+    @include modifier('shadow-float') {
+      @include prefix('animation', shadowFloat 2.3s infinite);
+    }
+
+    @include modifier('keypress1') {
+      @include prefix('animation', keyPress1 4s infinite);
+    }
+
+     @include modifier('keypress2') {
+       @include prefix('animation', keyPress2 7s infinite);
+     }
+
+     @include modifier('keypress3') {
+       @include prefix('animation', keyPress3 6s infinite);
+     }
+
+     @include modifier('keypress4') {
+       @include prefix('animation', keyPress4 3s infinite);
+     }
+
+     @include modifier('keypress5') {
+       @include prefix('animation', keyPress5 5s infinite);
+     }
+
+     @include modifier('opacity1') {
+       @include prefix('animation', opacity1 4s infinite);
+     }
+
+     @include modifier('opacity2') {
+       @include prefix('animation', opacity2 6s infinite);
+     }
+
+     @include modifier('opacity3') {
+       @include prefix('animation', opacity3 8s infinite);
+     }
+
+    @include modifier('path-intro') {
+      stroke-dasharray: 1300;
+      stroke-dashoffset: 0;
+      stroke: #FCFCFC;
+      @include prefix('animation', pathAnimation 2s 1.9s linear);
+      @include prefix('transition', $transitionSlow);
+    }
+  }
+
+
+  @keyframes appearUi {
+    0% {
+      opacity: 0;
+      transform: scale(0.1,0.1) translate3d(1953px,556px,0);
+    }
+    80% {
+      opacity: 0;
+      transform: scale(0.1,0.1) translate3d(1953px,556px,0);
+    }
+    85% {
+      opacity: 1;
+      transform: translate3d(0,0,0);
+    }
+    98% {
+      opacity: 1;
+      transform: scale(1,1) translate3d(0,0,0);
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+
+  @keyframes insertUi {
+    0% {
+      opacity: 0;
+      transform: translate3d(110px,70px,0);
+        }
+    20% {
+      opacity: 0;
+    }
+    32% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 1;
+      transform: translate3d(-180px,-120px,0);
+    }
+  }
+
+  @keyframes stars1 {
+    0% {
+      stroke-dashoffset: 50;
+        }
+    6% {
+      stroke-dashoffset: 0;
+    }
+    12% {
+      stroke-dashoffset: -50;
+    }
+    100% {
+      stroke-dashoffset: -50;
+    }
+  }
+  @keyframes stars2 {
+    0% {
+      stroke-dashoffset: 50;
+        }
+    20% {
+      stroke-dashoffset: 50;
+    }
+    26% {
+      stroke-dashoffset: 0;
+    }
+    32% {
+      stroke-dashoffset: -50;
+    }
+    100% {
+      stroke-dashoffset: -50;
+    }
+  }
+  @keyframes stars3 {
+    0% {
+      stroke-dashoffset: 50;
+        }
+    60% {
+      stroke-dashoffset: 50;
+    }
+    66% {
+      stroke-dashoffset: 0;
+    }
+    72% {
+      stroke-dashoffset: -50;
+    }
+    100% {
+      stroke-dashoffset: -50;
+    }
+  }
+  @keyframes stars4 {
+    0% {
+      stroke-dashoffset: 50;
+        }
+    80% {
+      stroke-dashoffset: 50;
+    }
+    87% {
+      stroke-dashoffset: 0;
+    }
+    92% {
+      stroke-dashoffset: -50;
+    }
+    100% {
+      stroke-dashoffset: -50;
+    }
+  }
+  @keyframes stars5 {
+    0% {
+      stroke-dashoffset: 50;
+        }
+    40% {
+      stroke-dashoffset: 50;
+    }
+    46% {
+      stroke-dashoffset: 0;
+    }
+    52% {
+      stroke-dashoffset: -50;
+    }
+    100% {
+      stroke-dashoffset: -50;
+    }
+  }
+  @keyframes stars6 {
+    0% {
+      stroke-dashoffset: 50;
+        }
+    50% {
+      stroke-dashoffset: 50;
+    }
+    56% {
+      stroke-dashoffset: 0;
+    }
+    62% {
+      stroke-dashoffset: -50;
+    }
+    100% {
+      stroke-dashoffset: -50;
+    }
+  }
+  @keyframes stars7 {
+    0% {
+      stroke-dashoffset: 50;
+        }
+    10% {
+      stroke-dashoffset: 50;
+    }
+    16% {
+      stroke-dashoffset: 0;
+    }
+    22% {
+      stroke-dashoffset: -50;
+    }
+    100% {
+      stroke-dashoffset: -50;
+    }
+  }
+  @keyframes stars8 {
+    0% {
+      stroke-dashoffset: 50;
+        }
+    70% {
+      stroke-dashoffset: 50;
+    }
+    76% {
+      stroke-dashoffset: 0;
+    }
+    82% {
+      stroke-dashoffset: -50;
+    }
+    100% {
+      stroke-dashoffset: -50;
+    }
+  }
+
+  @keyframes pathAnimation {
+    0% {
+      stroke: #FFEFEF;
+      stroke-dashoffset: 1300;
+    }
+    50% {
+      stroke: #FFEFEF;
+      stroke-dashoffset: 0;
+    }
+    100% {
+      stroke: #FCFCFC;
+    }
+  }
+
+  @keyframes opacity1 {
+    0%   {opacity: 1;}
+    95%  {opacity: 1;}
+    97%  {opacity: 0.3;}
+    100% {opacity: 1;}
+  }
+
+  @keyframes opacity2 {
+    0%   {opacity: 1;}
+    50%  {opacity: 1;}
+    53%  {opacity: 0.3;}
+    56%  {opacity: 1;}
+    100% {opacity: 1;}
+  }
+
+  @keyframes opacity3 {
+    0%   {opacity: 1;}
+    10%  {opacity: 1;}
+    13%  {opacity: 0.3;}
+    17%  {opacity: 1;}
+    100% {opacity: 1;}
+  }
+
+  @keyframes solidFloat1 {
+    0%   {transform: translate3d(0,10px,0)}
+    50%  {transform: translate3d(0,30px,0)}
+    100% {transform: translate3d(0,10px,0)}
+  }
+
+  @keyframes solidFloatMobile {
+    0%   {transform: translate3d(0,3px,0)}
+    50%  {transform: translate3d(0,10px,0)}
+    100% {transform: translate3d(0,3px,0)}
+  }
+
+  @keyframes floatWings {
+    0%   {transform: translate3d(0,0px,0)}
+    52%  {transform: translate3d(0,5px,0)}
+    100% {transform: translate3d(0,0px,0)}
+  }
+
+  @keyframes shadowFloat {
+    0%   {transform: translate3d(0,4px,0)}
+    50%  {transform: translate3d(0,0px,0)}
+    100% {transform: translate3d(0,4px,0)}
+  }
+
+  @keyframes fire1 {
+    0%   {transform: matrix(1.2, 0, 0, 1.2, -45, -45)}
+    50%  {transform: matrix(1, 0, 0, 1, 0, 0)}
+    100% {transform: matrix(1.2, 0, 0, 1.2, -45, -45)}
+  }
+
+  @keyframes fire2 {
+    0%   {transform: matrix(1.2, 0, 0, 1.2, -16, -27)}
+    50%  {transform: matrix(1, 0, 0, 1, 0, 0)}
+    100% {transform: matrix(1.2, 0, 0, 1.2, -16, -27)}
+  }
+}

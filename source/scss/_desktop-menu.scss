@@ -1,0 +1,55 @@
+.desktop-menu {
+
+  @include element('container') {
+    list-style: none;
+    float: right;
+    padding: sp(1) sp(2);
+
+    @media only screen and (max-width: $tablet-large) {
+      display: none;
+    }
+  }
+
+  @include element('item') {
+    display: inline-block;
+    position: relative;
+    margin: 0 sp(3);
+    font-size: $fontS;
+    cursor: pointer;
+    color: $colorFirst;
+    @include prefix('transition', $transitionMedium);
+
+    &:before {
+     content: '';
+     display: block;
+     width: 0%;
+     position: absolute;
+     top: sp(2.3);
+     height: 2px;
+     background-color: $colorThird;
+     z-index: -1;
+     @include prefix('transition', $transitionFast);
+    }
+    &:hover {
+     &:before {
+       width: 100%;
+     }
+    }
+
+    &:hover {
+     color: $colorThird !important;
+    }
+
+    @include modifier('selected') {
+      font-weight: $fontWeightFat;
+      pointer-events: none;
+      cursor: default;
+    }
+
+    & a {
+      text-decoration: none;
+      color: inherit;
+    }
+  }
+
+}

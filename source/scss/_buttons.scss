@@ -1,0 +1,76 @@
+.button {
+  display: block;
+  width: 160px;
+  height: 40px;
+  padding: sp(1.2) 0;
+  text-align: center;
+  overflow: hidden;
+  border-radius: $btnBorderRadius;
+  text-decoration: none;
+  @include prefix('transition', $transitionMedium);
+
+  @media only screen and (max-width: $tablet-large) {
+    width: 110px;
+  }
+
+  @include modifier('small') {
+    width: 120px;
+    height: 40px;
+    font-size: $fontS;
+    padding: sp(1.2) 0;
+
+    @media only screen and (max-width: $mobile-large) {
+      padding: sp(1.2) 0;
+    }
+  }
+
+  @include modifier('primary') {
+    color: $colorThird;
+    background-color: $colorFirst;
+    border: $btnBorder;
+    box-shadow: $buttonShadow;
+    @include prefix('transition', $transitionShadow);
+
+    &:hover {
+      background-color: transparent;
+      color: $colorFirst;
+      border: $btnBorderHover;
+      box-shadow: $buttonShadowHover;
+    }
+  }
+
+  @include modifier('secondary') {
+    color: $colorSecond;
+    background-color: $colorFirst;
+
+    &:hover {
+      color: $colorFirst;
+      background-color: $colorSecond;
+    }
+  }
+
+  @include modifier('left') {
+    float: left;
+  }
+
+  @include modifier('center') {
+    margin: 0 auto;
+  }
+
+  @include modifier('right') {
+    float: right;
+  }
+
+  @include modifier('inline') {
+    display: inline-block;
+
+    & + & {
+      margin-left: sp(1);
+    }
+  }
+
+  @include modifier('more') {
+    margin: sp(5) 0 sp(3) sp(1.2);
+  }
+
+}

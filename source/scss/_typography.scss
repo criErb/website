@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css?family=Playfair+Display');
+@font-face {
+  font-family: AvenirNextBold;
+  src: url("../fonts/AvenirNext-Bold.ttf");
+}
+@font-face {
+  font-family: AvenirNextRegular;
+  src: url("../fonts/AvenirNext-Regular.ttf");
+}
+
+h1 {
+  font-family: $headingFontRegular;
+  font-size: $fontXXXL;
+  margin: 0;
+
+  @media only screen and (max-width: $tablet-large) {
+    font-size: $fontXL;
+  }
+}
+
+h2 {
+  font-family: $headingFontRegular;
+  font-size: $fontXXL;
+
+  @media only screen and (max-width: $tablet-large) {
+    font-size: $fontL;
+  }
+}
+
+h3 {
+  font-family: $headingFontRegular;
+  font-size: $fontXL;
+  margin: sp(1) 0 sp(3) 0;
+
+  @media only screen and (max-width: $tablet-large) {
+    font-size: $fontML;
+  }
+}
+
+h4 {
+  font-family: $headingFontRegular;
+  font-size: $fontL;
+  margin-bottom: sp(2);
+}
+
+h5 {
+  font-family: $headingFontRegular;
+  font-size: $fontML;
+}
+
+p {
+  font-family: $paragraphFont;
+  font-size: $fontM;
+  line-height: $lineHeightParagraph;
+}
